@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
         features = "./src/test/resources/features/ui_test",
         glue={"stepdefinitions","hooks"},
         dryRun = false,
-        tags = "@appointment"
+        tags = " @wrong_format_ssn"
 )
 
 public class Runner {

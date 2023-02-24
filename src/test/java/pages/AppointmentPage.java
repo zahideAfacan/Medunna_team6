@@ -30,5 +30,16 @@ public class AppointmentPage {
 
 @FindBy (xpath = "//div[@class='Toastify']")
     public WebElement popUpMessage;
+    @FindBy (xpath = "//div[@class='invalid-feedback']")
+    public WebElement invalidFirstName;
+
+    @FindBy (xpath = "//h2[.='Make an Appointment']")
+    public WebElement scrollIntoView;
+
+    @FindBy (xpath = "//div[@class='invalid-feedback']")
+    public WebElement invalidSSN;
 
 }
+
+
+
