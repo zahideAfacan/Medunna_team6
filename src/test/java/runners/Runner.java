@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
         features = "./src/test/resources/features/ui_test",
         glue={"stepdefinitions","hooks"},
         dryRun = false,
-        tags = "@GoogleFeature"
+        tags = "@Wip"
 )
 
 public class Runner {
