@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class AppointmentPage {
         public AppointmentPage () {
                 PageFactory.initElements(Driver.getDriver(),this);
@@ -42,6 +44,36 @@ public class AppointmentPage {
         public WebElement yourEmail;
 @FindBy (xpath ="//*[contains(text(),'Phone number ')]" )
         public WebElement yourPhone;
+
+////////////////////////Admin
+        @FindBy (id = "account-menu")
+        public WebElement accountMenu;
+@FindBy (id = "login-item")
+        public WebElement signIn;
+
+@FindBy(id = "username")
+public WebElement userName;
+@FindBy (id = "password")
+public WebElement password;
+@FindBy (xpath = "//button[@type='submit']")
+        public WebElement submit;
+
+@FindBy (id = "entity-menu")
+public WebElement itemTitles;
+@FindBy (xpath = "(//a[@class='dropdown-item'])[1]")
+ public WebElement patient;
+@FindBy (xpath = "//table[@class='table']//thead//tr//th")
+ public List<WebElement> tableHeader;
+@FindBy (xpath ="//*[@id='app-view-container']//table/tbody/tr" )
+      public List<WebElement>  allRowElements ;
+@FindBy (xpath = "//li[@class='page-item']")
+        public List<WebElement>  pageItems;
+
+
+@FindBy(xpath ="(//*[@id='app-view-container'])//*[.='Next']" )
+  public WebElement next;
+@FindBy(xpath = "//button[@type='submit']")
+     public WebElement submitAdmin;
 
 
 }

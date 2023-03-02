@@ -4,6 +4,7 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.bs.A;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import pages.AppointmentPage;
@@ -169,10 +170,16 @@ appointmentPage.ssn.clear();
 
 }
     }
+
+
+
+
     @Then("user patient  close the application")
     public void user_patient_close_the_application() {
 
 Driver.getDriver().close();
     }
+
+
 
 }
