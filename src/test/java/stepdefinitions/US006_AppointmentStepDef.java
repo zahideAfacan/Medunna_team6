@@ -1,10 +1,8 @@
 package stepdefinitions;
 
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.bs.A;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import pages.AppointmentPage;
@@ -16,9 +14,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
-public class AppointmentStepDef {
+public class US006_AppointmentStepDef {
     AppointmentPage appointmentPage=new AppointmentPage();
     @Given("user patient is on medunna page")
     public void user_patient_is_on() {

@@ -20,18 +20,7 @@ Feature: appointment
     Examples:test_data
       | firstname | lastname | ssn         | email              | phone        |
       | Hasta     | Iyi      | 123-45-9876 | hastaiyi@gmail.com | 234-456-6789 |
-  @appointment1
-  Scenario: TC04_verify_appointment_created
-Given user admin clicks account menu button
-    When user admin clicks sign in button
-    Then user admin enters credentials
-      | username    | password |
-      | AdminTeam06 | Team06+  |
-    Then user admin clicks itemTitles
-    And user admin clicks patient
-    Then user admin checks appointment of patient and verify the credentials
-      | firstname | lastname | ssn         | email              | phone        |
-      | Hasta     | Iyi      | 123-45-9876 | hastaiyi@gmail.com | 234-456-6789 |
+
 
   Scenario: TC02_all_fields_blank
     When user patient clicks on the make appointment button
@@ -63,5 +52,16 @@ Given user admin clicks account menu button
     Then user patient  close the application
 
 
-
+  @appointment1
+  Scenario: TC04_verify_appointment_created
+    Given user admin clicks account menu button
+    When user admin clicks sign in button
+    Then user admin enters credentials
+      | username    | password |
+      | AdminTeam06 | Team06+  |
+    Then user admin clicks itemTitles
+    And user admin clicks patient
+    Then user admin checks appointment of patient and verify the credentials
+      | firstname | lastname | ssn         | email              | phone        |
+      | Hasta     | Iyi      | 123-45-9876 | hastaiyi@gmail.com | 234-456-6789 |
 
