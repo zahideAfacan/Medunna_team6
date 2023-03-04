@@ -18,4 +18,8 @@ public class InpatientPageKU {
 
     @FindBy(id = "appointment-id")
     public WebElement inpatientID;
+
 }
+
+
+

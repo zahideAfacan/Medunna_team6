@@ -14,6 +14,7 @@ public class RegistrationStepDefs {
 
     @Given("go to {string}")
     public void go_to(String url) {
+
         Driver.getDriver().get(url);
     }
     @Then("close the application")
@@ -21,8 +22,6 @@ public class RegistrationStepDefs {
         Driver.closeDriver();
 
     }
-
-
 
     @Given("user navigates to Medunna url")
     public void user_navigates_to_medunna_url() {
