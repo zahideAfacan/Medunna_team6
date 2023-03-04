@@ -44,5 +44,8 @@ public class LoginPageKU {
     @FindBy(linkText = "In Patient")
     public WebElement inpatient;
 
+    @FindBy(xpath = "//tbody")
+    public WebElement table;
 
 }
+

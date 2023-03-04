@@ -6,6 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 public class PatientTestPageKU {
+
     public PatientTestPageKU(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
@@ -45,7 +46,6 @@ public class PatientTestPageKU {
 
     @FindBy(linkText = "Show Test Results")
     public WebElement showTestResults;
-
 
 
 }
