@@ -3,10 +3,7 @@ package stepdefinitions;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.eo.Se;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import pages.AppointmentPage;
@@ -14,7 +11,11 @@ import pages.MD_AdminPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import java.util.Iterator;
+import java.util.Set;
+
 public class US007_StepDefinitions {
+    String userURL;
     MD_AdminPage md_adminPage = new MD_AdminPage();
     AppointmentPage appointmentPage=new AppointmentPage();
 
@@ -46,7 +47,10 @@ public class US007_StepDefinitions {
                 ReusableMethods.waitFor(1);
             }
         }
+
+
         edit.click();
+
     }
     @Then("user admin sends updated firstname {string} and {string}")
     public void user_admin_sends_updated_firstname_and(String firstName, String lastName) {
@@ -84,9 +88,7 @@ public class US007_StepDefinitions {
             md_adminPage.submit.click();
             ReusableMethods.waitFor(5);
         }
-
     }
-
     @Then("user admin verifies popup message {string}")
     public void user_admin_verifies_popup_message(String string) {
 ReusableMethods.waitForVisibility(md_adminPage.successMessage,5);
@@ -96,11 +98,10 @@ ReusableMethods.waitForVisibility(md_adminPage.successMessage,5);
         System.out.println(actualText);
             System.out.println(actualText+"   actualText");
           Assert.assertTrue(actualText.contains("A user is updated with identifier"));
-
-
+        }
     }
 
-    }
+
 
 
 
