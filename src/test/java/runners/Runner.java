@@ -14,10 +14,16 @@ import org.junit.runner.RunWith;
                 "rerun:target/failedRerun.txt"
         },
 
-        features = "./src/test/resources/features/ui_test",
+        features = "src/test/resources/features/ui_test",
         glue={"stepdefinitions","hooks"},
         dryRun = false,
-        tags = "@US_005"
+
+
+
+        tags = " "
+
+
+
 )
 
 public class Runner {

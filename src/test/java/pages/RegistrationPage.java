@@ -12,7 +12,7 @@ public class RegistrationPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(xpath = "//*[@id=\"account-menu\"]/a")
+    @FindBy(xpath = "//*[@id='account-menu']/a")
     public WebElement registerIcon;
 
     @FindBy(xpath = "(//a[@class='dropdown-item'])[2]")
