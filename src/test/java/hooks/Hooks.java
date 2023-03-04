@@ -6,6 +6,7 @@ import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import utilities.Driver;
+import static base_urls.MedunnaBaseUrl.medunnaSetUp;
 
 public class Hooks {
     /*
@@ -39,6 +40,11 @@ public class Hooks {
     @After("@smoke_tests")
     public void tearDownSmokeScenarios(){
         System.out.println("RUN FOR ONLY SMOKE TEST SCENARIOS");
+    }
+
+    @Before("@Api08")
+    public void beforeApi(){
+        medunnaSetUp();
     }
 
 }
