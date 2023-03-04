@@ -8,7 +8,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import pages.AppointmentPage;
+import pages.AppointmentPageMD;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
@@ -17,16 +17,16 @@ import java.util.*;
 public class US006_AppointmentVerificationStepDefs {
 
     ////////////////VERIFICATION\\\\\\\\\\\\\\\\
-    AppointmentPage appointmentPage = new AppointmentPage();
+    AppointmentPageMD appointmentPageMD = new AppointmentPageMD();
 
     @Given("user admin clicks account menu button")
     public void user_admin_clicks_account_menu_button() {
-        appointmentPage.accountMenu.click();
+        appointmentPageMD.accountMenu.click();
     }
 
     @When("user admin clicks sign in button")
     public void user_admin_clicks_sign_in_button() {
-        appointmentPage.signIn.click();
+        appointmentPageMD.signIn.click();
     }
 
     @Then("user admin enters credentials")
@@ -34,25 +34,25 @@ public class US006_AppointmentVerificationStepDefs {
         List<Map<String, String>> adminUserPass = adminCredentials.asMaps(String.class, String.class);
 
         for (Map<String, String> each : adminUserPass) {
-            appointmentPage.userName.sendKeys(each.get("username"));
+            appointmentPageMD.userName.sendKeys(each.get("username"));
             ReusableMethods.waitFor(2);
-            appointmentPage.password.sendKeys(each.get("password"));
+            appointmentPageMD.password.sendKeys(each.get("password"));
             ReusableMethods.waitFor(2);
         }
-        appointmentPage.submitAdmin.click();
+        appointmentPageMD.submitAdmin.click();
     }
 
     @Then("user admin clicks itemTitles")
     public void user_admin_clicks_item_titles() {
         ReusableMethods.waitFor(1);
-        appointmentPage.itemTitles.click();
+        appointmentPageMD.itemTitles.click();
 
     }
 
     @Then("user admin clicks patient")
     public void user_admin_clicks_patient() {
         ReusableMethods.waitFor(2);
-        appointmentPage.patient.click();
+        appointmentPageMD.patient.click();
 
     }
 
@@ -68,17 +68,17 @@ public class US006_AppointmentVerificationStepDefs {
 
         //Table Headers(ID,SSN,First Name... Aliyor ve bir ArrrayList icine atiyoruz. Locatore bakarsaniz List<webElement>table header
         List<String> allHeaderNames = new ArrayList<String>();
-        for (int i = 0; i < appointmentPage.tableHeader.size() - 1; i++) {
+        for (int i = 0; i < appointmentPageMD.tableHeader.size() - 1; i++) {
             //Burda int=1 ile basliyor cunku Table Index ) degil 1 den basliyor
             //appointmentPage.tableHeader.size() - 1 (Cunku en sondaki View edit Delete kismi bir columnda ve basligi yok.Lazim degil
-            String headerName = appointmentPage.tableHeader.get(i).getText();
+            String headerName = appointmentPageMD.tableHeader.get(i).getText();
             allHeaderNames.add(headerName);
         }
 //ALL TABLE DATA
         List<LinkedHashMap<String, String>> allTableData = new ArrayList<LinkedHashMap<String, String>>();
   //LinkedHashMap normal Map degil cunku  bu sekilde insertion sirasi her zaman korunuyor,Bize bu lazim
-        int rowCount = appointmentPage.allRowElements.size();//Kac row var oldugunu gosteriyor
-        int pageItemSize = appointmentPage.pageItems.size(); //En alttaki next page elements.Bunun sayisini bilmek lazim.O kadar click
+        int rowCount = appointmentPageMD.allRowElements.size();//Kac row var oldugunu gosteriyor
+        int pageItemSize = appointmentPageMD.pageItems.size(); //En alttaki next page elements.Bunun sayisini bilmek lazim.O kadar click
         System.out.println(pageItemSize+ "Page Item SIze ........................>>>>>>>>");
         for (int i = 1; i <= pageItemSize+1; i++) {//Click next icin loop
             ReusableMethods.waitFor(3);//Bekleme biraz uzun tutmak lazim cunku her pageden data almak zaman aliyor
@@ -107,7 +107,7 @@ public class US006_AppointmentVerificationStepDefs {
             }
             //Bu asagidaki next buttonu normal locator ile calismiyor. Actions class kullanmak lazim .JavaScript oldugu icin
             Actions actions = new Actions(Driver.getDriver());
-            actions.moveToElement(appointmentPage.next).click().perform();
+            actions.moveToElement(appointmentPageMD.next).click().perform();
             ReusableMethods.waitFor(1);
 //Ilk sayfayi tamam ediyor .En tepe donguye gidiyor.ben yaparken 6 sayfa var idi. 6 kere click next oldu..sayfa arttikca artar
 

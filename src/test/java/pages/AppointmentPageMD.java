@@ -8,8 +8,8 @@ import utilities.Driver;
 
 import java.util.List;
 
-public class AppointmentPage {
-    public AppointmentPage () {
+public class AppointmentPageMD {
+    public AppointmentPageMD() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
     @FindBy (xpath = "//span[@class='d-none d-md-inline']")

@@ -1,23 +1,19 @@
 package stepdefinitions;
 
 import io.cucumber.java.en.Then;
-import io.cucumber.java.eo.Se;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-import pages.AppointmentPage;
+import pages.AppointmentPageMD;
 import pages.MD_AdminPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-import java.util.Iterator;
-import java.util.Set;
-
 public class US007_StepDefinitions {
     String userURL;
     MD_AdminPage md_adminPage = new MD_AdminPage();
-    AppointmentPage appointmentPage=new AppointmentPage();
+    AppointmentPageMD appointmentPageMD =new AppointmentPageMD();
 
     @Then("user admin clicks administration and usermanagement")
     public void user_admin_clicks_administration_and_usermanagement() {
