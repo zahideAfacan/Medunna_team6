@@ -1,4 +1,4 @@
-package stepdefinitions;
+package stepdefinitions.ui_stepdef;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
